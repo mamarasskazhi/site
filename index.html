@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#fbf8f2">
+  <meta name="description" content="Мама, расскажи — персонализированные детские книги, где ребёнок становится главным героем. Сказкотерапия, психологический подход и бесплатная библиотека сказок.">
+  <title>Мама, расскажи — персонализированные книги для детей</title>
+  <link rel="icon" href="assets/images/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Neucha&family=Onest:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+<header class="site-header" id="top">
+  <div class="container header-inner">
+    <a class="brand" href="#top" aria-label="Мама, расскажи — главная"><img src="assets/images/logo-blue.png" alt="Мама, расскажи"></a>
+    <nav class="desktop-nav" aria-label="Основная навигация">
+      <a href="#books">Книги</a>
+      <a href="#psychology">Сказкотерапия</a>
+      <a href="#passport">Паспорт читателя</a>
+      <a href="skazki.html">Сказки</a>
+      <a href="#how">Как заказать</a>
+    </nav>
+    <div style="display:flex;align-items:center;gap:8px">
+      <a class="btn btn-primary header-order" href="https://t.me/mama_rasskazhi_bot" target="_blank" rel="noopener">Заказать</a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Открыть меню"><span></span></button>
+    </div>
+  </div>
+  <nav class="mobile-nav" id="mobile-menu" aria-label="Мобильная навигация">
+    <a href="#books">Книги</a>
+    <a href="#psychology">Почему это работает</a>
+    <a href="#passport">Паспорт читателя</a>
+    <a href="skazki.html">Бесплатные сказки</a>
+    <a href="#how">Как заказать</a>
+    <a class="mobile-order" href="https://t.me/mama_rasskazhi_bot" target="_blank" rel="noopener">Заказать книгу</a>
+  </nav>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-copy reveal">
+        <div class="hero-sale"><span class="sale-badge js-sale-badge">До 30 сентября · <strong>−20%</strong></span></div>
+        <h1>Книга, в которой ребёнок — <span>главный герой</span></h1>
+        <p class="hero-lead">Имя, внешность и важная для ребёнка тема превращаются в настоящую иллюстрированную историю — не просто «про кого-то», а про него самого.</p>
+        <div class="hero-price js-print-price"><del>350 000 сум</del><strong>280 000 сум</strong></div>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#books">Выбрать книгу</a>
+          <a class="btn btn-secondary" href="skazki.html">Читать бесплатные сказки</a>
+        </div>
+        <p class="hero-note">Персонажа сначала утверждаете вы. Предоплата — 150 000 сум после согласования героя.</p>
+      </div>
+      <div class="hero-visual reveal">
+        <div class="hero-image-frame">
+          <img src="assets/images/hero-books.webp" alt="Персонализированные книги Мама, расскажи">
+          <div class="hero-sticker"><strong>20 × 20 см</strong>Твёрдая персональная книга, которую хочется хранить.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section books-section" id="books">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="kicker">Выберите историю</span>
+        <h2>Книга под ситуацию, которая важна ребёнку сейчас</h2>
+        <p>Не просто выбирайте красивую обложку. Смотрите, какой навык или переживание хочется мягко обсудить с ребёнком.</p>
+      </div>
+
+      <div class="age-tabs" role="tablist" aria-label="Возраст ребёнка">
+        <button class="age-tab active" type="button" role="tab" aria-selected="true" data-age="1-3"><strong>1–3</strong><small>первые открытия</small></button>
+        <button class="age-tab" type="button" role="tab" aria-selected="false" data-age="3-7"><strong>3–7</strong><small>характер и отношения</small></button>
+        <button class="age-tab" type="button" role="tab" aria-selected="false" data-age="7-9"><strong>7–9</strong><small>готовим новые истории</small></button>
+      </div>
+
+      <div class="catalog-controls" id="catalog-controls" hidden>
+        <div class="segmented" aria-label="Для одного или двух детей">
+          <button class="active" type="button" data-family="one">Для одного ребёнка</button>
+          <button type="button" data-family="two">Для двоих детей</button>
+        </div>
+        <div class="segmented" id="gender-chips" aria-label="Тематика героя">
+          <button class="active" type="button" data-gender="all">Все</button>
+          <button type="button" data-gender="universal">Универсальные</button>
+          <button type="button" data-gender="girl">Для девочки</button>
+          <button type="button" data-gender="boy">Для мальчика</button>
+        </div>
+      </div>
+      <div class="catalog-intro" id="catalog-intro"></div>
+      <div class="book-grid" id="book-grid" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <section class="section psychology" id="psychology">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="kicker">Психологический подход к сказке</span>
+        <h2>Почему ребёнок слышит такую историю по-другому</h2>
+      </div>
+      <div class="psy-grid">
+        <article class="psy-intro reveal">
+          <p>Когда ребёнку говорят «не бойся», «не злись», «делись» или «доводи дело до конца», совет может остаться просто взрослой фразой.</p>
+          <blockquote>«В сказке ребёнок не слушает урок о том, как правильно. Он проживает ситуацию вместе с героем и может сам заметить другой способ действовать.»</blockquote>
+          <p>В персональной книге этот эффект становится ближе: ребёнок видит своё имя и образ внутри истории. Смысл не навязывается — он раскрывается через сюжет, эмоции и выбор героя.</p>
+          <p class="psy-note">Истории построены с опорой на принципы сказкотерапии и возрастной психологии. Они не заменяют консультацию специалиста и не ставят диагнозов.</p>
+        </article>
+        <div class="psy-points reveal">
+          <article class="psy-point"><div class="num">01</div><h3>Узнать себя</h3><p>Ссора, страх ошибки, ревность, сравнение или «я не могу» становятся понятной ситуацией в истории.</p></article>
+          <article class="psy-point"><div class="num">02</div><h3>Прожить безопасно</h3><p>Герой пробует, ошибается, злится, мирится и находит решение — без давления и нравоучений.</p></article>
+          <article class="psy-point"><div class="num">03</div><h3>Поговорить после</h3><p>История даёт родителю мягкую точку входа в разговор: «А у тебя бывает так?» — вместо длинной лекции.</p></article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section soft" id="passport">
+    <div class="container passport-wrap">
+      <div class="passport-media reveal"><img src="assets/images/reader-passport.webp" alt="Паспорт маленького читателя"></div>
+      <div class="passport-copy reveal">
+        <span class="kicker">Подарок к первой печатной книге</span>
+        <h2>Паспорт маленького читателя</h2>
+        <p>Небольшой физический паспорт, который помогает превратить чтение в коллекцию впечатлений. Ребёнок получает его с первой книгой, а затем пополняет наклейками за прочитанные истории.</p>
+        <div class="passport-list">
+          <div class="passport-item"><span>1</span><div><strong>Паспорт — в подарок</strong><br><small>к первой печатной книге</small></div></div>
+          <div class="passport-item"><span>2</span><div><strong>У каждой книги — своя наклейка</strong><br><small>её можно вклеить после прочтения</small></div></div>
+          <div class="passport-item"><span>3</span><div><strong>Коллекция растёт вместе с ребёнком</strong><br><small>и мотивирует возвращаться к чтению</small></div></div>
+        </div>
+        <p class="small">Изображение паспорта можно заменить в папке сайта одним файлом — верстка не сломается.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="how">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="kicker">Как создаётся книга</span>
+        <h2>От одной фотографии до готовой истории</h2>
+        <p>Всё общение проходит через Telegram. Герой сначала утверждается вами, и только потом заказ идёт дальше.</p>
+      </div>
+      <div class="transform reveal">
+        <div class="transform-card"><img src="assets/images/process-photo.webp" alt="Фото ребёнка для создания героя"><div class="transform-label">1. Фото ребёнка</div></div>
+        <div class="transform-arrow">→</div>
+        <div class="transform-card"><img src="assets/images/process-character.webp" alt="Персонаж на основе фотографии"><div class="transform-label">2. Герой книги</div></div>
+      </div>
+      <div class="process-grid">
+        <article class="step"><div class="step-num">1</div><div><h3>Выбираете книгу</h3><p>Нажимаете «Заказать» и переходите в Telegram-бот.</p></div></article>
+        <article class="step"><div class="step-num">2</div><div><h3>Присылаете фото</h3><p>Имя, возраст, фотографию и пожелания по образу.</p></div></article>
+        <article class="step"><div class="step-num">3</div><div><h3>Утверждаете героя</h3><p>Мы показываем персонажа до подготовки книги.</p></div></article>
+        <article class="step"><div class="step-num">4</div><div><h3>Предоплата 150 000 сум</h3><p>После согласования героя заказ запускается в работу.</p></div></article>
+        <article class="step"><div class="step-num">5</div><div><h3>Готовим и печатаем</h3><p>Персонализируем историю и изготавливаем книгу.</p></div></article>
+        <article class="step"><div class="step-num">6</div><div><h3>Получаете и доплачиваете</h3><p>Оставшуюся сумму оплачиваете после готовности.</p></div></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section soft" id="prices">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="kicker">Форматы</span>
+        <h2>Печатная или электронная</h2>
+        <p>Персонализация остаётся индивидуальной в обоих форматах.</p>
+      </div>
+      <div class="price-grid">
+        <article class="price-card featured reveal">
+          <span class="sale-badge js-sale-badge">−20% до 30 сентября</span>
+          <h3>Печатная книга</h3>
+          <p>Твёрдая книга 20 × 20 см. К первой печатной книге — паспорт маленького читателя в подарок.</p>
+          <div class="price js-print-price"><del>350 000</del> 280 000 сум</div>
+          <button class="btn btn-primary btn-full js-order" type="button" data-format="print" data-book="Любая книга">Заказать печатную</button>
+        </article>
+        <article class="price-card reveal">
+          <span class="sale-badge js-sale-badge">−20% до 30 сентября</span>
+          <h3>Электронная версия</h3>
+          <p>Персональная веб-книга по отдельной ссылке. Открывается с телефона или планшета без приложения.</p>
+          <div class="price js-digital-price"><del>200 000</del> 160 000 сум</div>
+          <button class="btn btn-secondary btn-full js-order" type="button" data-format="digital" data-book="Любая книга">Заказать электронную</button>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section story-teaser" id="stories">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="kicker">Бесплатная библиотека</span>
+        <h2>Что сегодня рассказать ребёнку?</h2>
+        <p>Короткие и длинные сказки по возрасту и теме. Они не персонализированы и остаются отдельным бесплатным разделом бренда.</p>
+      </div>
+      <article class="story-day reveal" id="story-day" aria-live="polite"></article>
+      <div class="story-library-link"><a class="btn btn-secondary btn-full" href="skazki.html">Открыть всю библиотеку сказок</a></div>
+    </div>
+  </section>
+
+  <section class="section soft" id="faq">
+    <div class="container">
+      <div class="section-head reveal"><span class="kicker">Коротко о важном</span><h2>Частые вопросы</h2></div>
+      <div class="faq-list reveal">
+        <details><summary>Как ребёнок становится героем?</summary><p>Вы присылаете фото, имя и возраст. Мы создаём персонажа на основе внешности ребёнка и показываем его вам до подготовки книги.</p></details>
+        <details><summary>Почему нужна предоплата 150 000 сум?</summary><p>После утверждения персонажа начинается индивидуальная подготовка и расходуются материалы. Оставшуюся сумму вы оплачиваете после готовности книги.</p></details>
+        <details><summary>Можно заказать только электронную книгу?</summary><p>Да. Вы получите персональную веб-книгу по отдельной ссылке и сможете открывать её в любое время с телефона или планшета.</p></details>
+        <details><summary>Что такое паспорт маленького читателя?</summary><p>Это физический паспорт, который идёт в подарок к первой печатной книге. За прочитанные книги ребёнок собирает наклейки и пополняет свою коллекцию.</p></details>
+        <details><summary>Бесплатные сказки персонализированы?</summary><p>Нет. Бесплатная библиотека — это короткие и длинные общие истории. Персонализация имени, внешности и героя остаётся особенностью платных книг.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="final-cta">
+    <div class="container">
+      <span class="kicker">Начнём с одной фотографии</span>
+      <h2>Пусть следующая история будет именно про вашего ребёнка</h2>
+      <p>Напишите в Telegram-бот — он поможет выбрать книгу и собрать данные для персонализации.</p>
+      <a class="btn" href="https://t.me/mama_rasskazhi_bot" target="_blank" rel="noopener">Заказать книгу в Telegram</a>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div><img class="footer-logo" src="assets/images/logo-white.png" alt="Мама, расскажи"><p style="margin-top:12px">Персонализированные истории о том, что действительно волнует детей.</p></div>
+      <div><strong>Разделы</strong><div class="footer-links" style="margin-top:9px"><a href="#books">Книги</a><a href="#psychology">Сказкотерапия</a><a href="skazki.html">Бесплатные сказки</a><a href="#how">Как заказать</a></div></div>
+      <div><strong>Заказать</strong><div class="footer-links" style="margin-top:9px"><a href="https://t.me/mama_rasskazhi_bot" target="_blank" rel="noopener">@mama_rasskazhi_bot</a></div></div>
+    </div>
+    <div class="footer-meta">© 2026 «Мама, расскажи». Персонализированные детские истории.</div>
+  </div>
+</footer>
+
+<div class="modal" id="preview-modal" aria-hidden="true">
+  <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="preview-title">
+    <div class="modal-head"><div><span class="kicker">Фрагмент книги</span><h2 id="preview-title">Книга</h2></div><button class="modal-close" type="button" aria-label="Закрыть">×</button></div>
+    <div class="preview-stage"><img id="preview-image" src="" alt=""></div>
+    <div class="preview-actions"><a class="btn btn-secondary" id="preview-open" href="#" target="_blank" rel="noopener">Открыть крупно</a><button class="btn btn-primary" id="preview-order" type="button">Заказать</button></div>
+  </div>
+</div>
+
+<div class="modal" id="order-modal" aria-hidden="true">
+  <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="order-title">
+    <div class="modal-head"><div><span class="kicker">Заказ</span><h2 id="order-title">Выберите формат</h2><p class="small" id="order-book-name">Книга</p></div><button class="modal-close" type="button" aria-label="Закрыть">×</button></div>
+    <div class="order-options">
+      <label class="order-option"><input type="radio" name="order-format" value="print" checked><span><strong>Печатная книга</strong><small>20 × 20 см · паспорт читателя к первой книге</small></span><span class="amount js-order-print">280 000</span></label>
+      <label class="order-option"><input type="radio" name="order-format" value="digital"><span><strong>Электронная версия</strong><small>личная ссылка · телефон или планшет</small></span><span class="amount js-order-digital">160 000</span></label>
+    </div>
+    <div class="order-total"><span>Сейчас</span><strong id="order-total">280 000 сум</strong></div>
+    <p class="order-gift" id="order-gift">Для печатной версии: паспорт маленького читателя — в подарок к первой книге.</p>
+    <a class="btn btn-primary btn-full" id="telegram-order" href="https://t.me/mama_rasskazhi_bot" target="_blank" rel="noopener">Продолжить в Telegram</a>
+  </div>
+</div>
+
+<script src="data/config.js"></script>
+<script src="data/stories.js"></script>
+<script src="assets/js/stories-data.js"></script>
+<script src="assets/js/site.js"></script>
+</body>
+</html>

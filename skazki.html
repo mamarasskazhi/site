@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#fbf8f2">
+  <meta name="description" content="Бесплатные детские сказки Мама, расскажи — по возрасту, теме и времени чтения.">
+  <title>Бесплатные сказки для детей — Мама, расскажи</title>
+  <link rel="icon" href="assets/images/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Neucha&family=Onest:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="index.html" aria-label="Мама, расскажи — главная"><img src="assets/images/logo-blue.png" alt="Мама, расскажи"></a>
+    <nav class="desktop-nav" aria-label="Основная навигация"><a href="index.html#books">Книги</a><a href="skazki.html" aria-current="page">Сказки</a><a href="index.html#psychology">Сказкотерапия</a><a href="index.html#how">Как заказать</a></nav>
+    <div style="display:flex;align-items:center;gap:8px"><a class="btn btn-primary header-order" href="https://t.me/mama_rasskazhi_bot" target="_blank" rel="noopener">Заказать книгу</a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Открыть меню"><span></span></button></div>
+  </div>
+  <nav class="mobile-nav" id="mobile-menu"><a href="index.html#books">Книги</a><a href="skazki.html">Сказки</a><a href="index.html#psychology">Сказкотерапия</a><a href="index.html#how">Как заказать</a><a class="mobile-order" href="https://t.me/mama_rasskazhi_bot" target="_blank" rel="noopener">Заказать книгу</a></nav>
+</header>
+
+<main>
+  <section class="library-hero">
+    <div class="container reveal">
+      <span class="kicker">Бесплатная библиотека</span>
+      <h1>Что сегодня рассказать ребёнку?</h1>
+      <p>Добрые истории на разные случаи — про страхи, дружбу, ошибки, уверенность, детский сад, школу и всё, что волнует детей. Выберите возраст, тему и удобное время чтения.</p>
+      <p class="small">Эти сказки не персонализированы. В платных книгах «Мама, расскажи» ребёнок становится главным героем со своим именем и внешностью.</p>
+    </div>
+  </section>
+
+  <section class="filters-shell" aria-label="Фильтры сказок">
+    <div class="container">
+      <div class="search-box"><input id="story-search" type="search" placeholder="Найти сказку по названию или теме" autocomplete="off" aria-label="Найти сказку"><span class="search-icon">⌕</span></div>
+      <div class="filter-row" id="age-filters" aria-label="Возраст">
+        <button class="filter-chip active" type="button" data-age="all">Все возрасты</button>
+        <button class="filter-chip" type="button" data-age="1-3">1–3 года</button>
+        <button class="filter-chip" type="button" data-age="3-7">3–7 лет</button>
+        <button class="filter-chip" type="button" data-age="7-9">7–9 лет</button>
+      </div>
+      <div class="filter-row" id="duration-filters" aria-label="Время чтения" style="margin-top:8px">
+        <button class="filter-chip active" type="button" data-duration="all">Любое время</button>
+        <button class="filter-chip" type="button" data-duration="3–5 минут">3–5 минут</button>
+        <button class="filter-chip" type="button" data-duration="10–15 минут">10–15 минут</button>
+      </div>
+      <div class="select-wrap"><select id="theme-filter" aria-label="Тема сказки"><option value="all">Все темы</option></select><button class="clear-filter" id="clear-filters" type="button">Сбросить</button></div>
+    </div>
+  </section>
+
+  <section class="library-results">
+    <div class="container">
+      <div class="result-head"><h2 style="font-size:26px;margin:0">Сказки</h2><div class="result-count" id="result-count">Загрузка…</div></div>
+      <div class="story-grid" id="story-grid" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <section class="final-cta">
+    <div class="container">
+      <span class="kicker">Хотите историю именно про вашего ребёнка?</span>
+      <h2>В персональной книге он становится главным героем</h2>
+      <p>Имя, внешность и важная тема превращаются в настоящую иллюстрированную историю, созданную специально для него.</p>
+      <a class="btn" href="index.html#books">Посмотреть персонализированные книги</a>
+    </div>
+  </section>
+</main>
+
+<footer class="footer"><div class="container"><div class="footer-grid"><div><img class="footer-logo" src="assets/images/logo-white.png" alt="Мама, расскажи"><p style="margin-top:12px">Персонализированные книги и бесплатные сказки для семейного чтения.</p></div><div><strong>Разделы</strong><div class="footer-links" style="margin-top:9px"><a href="index.html#books">Книги</a><a href="skazki.html">Сказки</a><a href="index.html#psychology">Сказкотерапия</a></div></div><div><strong>Заказать</strong><div class="footer-links" style="margin-top:9px"><a href="https://t.me/mama_rasskazhi_bot" target="_blank" rel="noopener">@mama_rasskazhi_bot</a></div></div></div><div class="footer-meta">© 2026 «Мама, расскажи».</div></div></footer>
+
+<script src="data/config.js"></script>
+<script src="data/stories.js"></script>
+<script src="assets/js/stories-data.js"></script>
+<script src="assets/js/library.js"></script>
+</body>
+</html>
